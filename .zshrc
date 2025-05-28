@@ -1,10 +1,15 @@
 echo "loading .zshrc..."
 
+# alias - shortcuts
 alias vim="nvim"
 alias lg="lazygit"
 
+# alias - dotfiles
 alias so="source ~/.zshrc"
 alias nvimrc="cd ~/.config/nvim"
+
+# alias - projects
+alias obsidian="cd ~/Documents/obsidian-vault"
 
 # this was already here lol, not deleting it haha
 . "/Users/gjtiquia/.deno/env"
