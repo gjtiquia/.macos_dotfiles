@@ -1,5 +1,8 @@
 echo "loading .zshrc..."
 
+alias vim="nvim"
+alias lg="lazygit"
+
 alias so="source ~/.zshrc"
 alias nvimrc="cd ~/.config/nvim"
 
