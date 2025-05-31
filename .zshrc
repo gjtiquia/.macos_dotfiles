@@ -3,6 +3,8 @@ echo "loading .zshrc..."
 # alias - shortcuts
 alias vim="nvim"
 alias lg="lazygit"
+alias c="clear"
+alias q="exit"
 
 # alias - dotfiles
 alias so="source ~/.zshrc"
