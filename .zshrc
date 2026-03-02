@@ -13,6 +13,9 @@ DOTFILES_HOME=$HOME
 DOTFILES_GIT_DIR=.macos_dotfiles
 alias dotfiles="git --git-dir=$DOTFILES_HOME/$DOTFILES_GIT_DIR/ --work-tree=$DOTFILES_HOME"
 
+# homebrew setup
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
