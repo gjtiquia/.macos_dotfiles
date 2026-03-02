@@ -13,6 +13,7 @@ DOTFILES_HOME=$HOME
 DOTFILES_GIT_DIR=.macos_dotfiles
 alias dotfiles="git --git-dir=$DOTFILES_HOME/$DOTFILES_GIT_DIR/ --work-tree=$DOTFILES_HOME"
 
+# setup local binaries
 export PATH="$PATH:$HOME/.local/bin"
 
 # homebrew setup
