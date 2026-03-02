@@ -1,22 +1,12 @@
-echo "loading .zshrc..."
-
 # alias - shortcuts
-alias vim="nvim"
+alias v="nvim"
 alias lg="lazygit"
 alias ff="fastfetch"
-alias c="clear && ff"
+alias c="clear"
 alias q="exit"
 
 # alias - dotfiles
-alias so="source ~/.zshrc"
 alias nvimrc="cd ~/.config/nvim"
-
-# alias - projects
-# (this is no longer needed because of zoxide)
-# alias obsidian="cd ~/Documents/obsidian-vault"
-
-# this was already here lol, not deleting it haha
-. "/Users/gjtiquia/.deno/env"
 
 # dotfiles management
 DOTFILES_HOME=$HOME
