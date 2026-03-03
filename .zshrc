@@ -1,3 +1,24 @@
+# GJ's MacOS .zshrc 
+
+# oh-my-zsh minimalist version
+# ===
+# Initialize the completion system
+autoload -Uz compinit
+compinit
+
+# Enable colors for the 'ls' command 
+# 'G' enables color, 'F' adds symbols (like / for dirs)
+export CLICOLOR=1
+alias ls='ls -GF'
+
+# Tell the Zsh completion system to use the same colors as 'ls'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# For the completion list to be "selectable" 
+# (so you can see the colors clearly while navigating)
+zstyle ':completion:*' menu select
+# ===
+
 # alias - shortcuts
 alias v="nvim"
 alias lg="lazygit"
@@ -41,3 +62,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # bob setup
 export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
+
+
