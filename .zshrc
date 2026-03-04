@@ -37,6 +37,9 @@ alias dotfiles="git --git-dir=$DOTFILES_HOME/$DOTFILES_GIT_DIR/ --work-tree=$DOT
 # setup local binaries
 export PATH="$PATH:$HOME/.local/bin"
 
+# android studio platform tools setup (eg. adb)
+export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+
 # homebrew setup
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -63,4 +66,5 @@ export NVM_DIR="$HOME/.nvm"
 # bob setup
 export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
 
-
+# direnv setup
+eval "$(direnv hook zsh)"
