@@ -68,3 +68,10 @@ export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
 
 # direnv setup
 eval "$(direnv hook zsh)"
+
+# bun completions
+[ -s "/Users/gjtiquia/.bun/_bun" ] && source "/Users/gjtiquia/.bun/_bun"
+
+# bun setup
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
