@@ -1,7 +1,11 @@
 # GJ's MacOS .zshrc 
 
-# oh-my-zsh minimalist version
-# ===
+# ========== replicating minimal "ubuntu defaults" =========
+autoload -U colors && colors
+PROMPT='%F{green}%n@%m%f:%F{blue}%~%f %# '
+# ==========================================================
+
+# ========== oh-my-zsh minimalist version ==========
 # Initialize the completion system
 autoload -Uz compinit
 compinit
@@ -17,7 +21,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # For the completion list to be "selectable" 
 # (so you can see the colors clearly while navigating)
 zstyle ':completion:*' menu select
-# ===
+# ==================================================
 
 # alias - shortcuts
 alias v="nvim"
@@ -75,3 +79,6 @@ eval "$(direnv hook zsh)"
 # bun setup
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# opencode
+export PATH=/Users/gjtiquia/.opencode/bin:$PATH
