@@ -23,6 +23,9 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
 # ==================================================
 
+# vi keybindings
+bindkey -v
+
 # alias - shortcuts
 alias v="nvim"
 alias lg="lazygit"
