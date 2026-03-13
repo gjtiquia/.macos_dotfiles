@@ -83,5 +83,11 @@ eval "$(direnv hook zsh)"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# opencode
-export PATH=/Users/gjtiquia/.opencode/bin:$PATH
+# opencode setup
+export PATH="$HOME/.opencode/bin:$PATH"
+
+# go setup
+export PATH="$HOME/go/bin:$PATH"
+
+# .NET Core SDK tools setup
+export PATH="$PATH:/Users/gjtiquia/.dotnet/tools"
