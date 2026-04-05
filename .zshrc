@@ -1,11 +1,16 @@
-# GJ's MacOS .zshrc 
+# GJ's MacOS .zshrc
+# repo: github.com/gjtiquia/.macos_dotfiles
 
-# ========== replicating minimal "ubuntu defaults" =========
+# =======================================
+# ubuntu defaults minimalist version
+# - replicating default prompt colors
+
 autoload -U colors && colors
 PROMPT='%F{green}%n@%m%f:%F{blue}%~%f %# '
-# ==========================================================
 
-# ========== oh-my-zsh minimalist version ==========
+# =======================================
+# oh-my-zsh minimalist version
+
 # Initialize the completion system
 autoload -Uz compinit
 compinit
@@ -21,7 +26,10 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # For the completion list to be "selectable" 
 # (so you can see the colors clearly while navigating)
 zstyle ':completion:*' menu select
-# ==================================================
+
+# =======================================
+# BASE SETUP
+# - keybindings and aliases
 
 # vi keybindings
 bindkey -v
@@ -41,6 +49,10 @@ DOTFILES_HOME=$HOME
 DOTFILES_GIT_DIR=.macos_dotfiles
 alias dotfiles="git --git-dir=$DOTFILES_HOME/$DOTFILES_GIT_DIR/ --work-tree=$DOTFILES_HOME"
 
+# =======================================
+# ENV SETUP
+# - most of these have to do with adding to PATH
+
 # setup local binaries
 export PATH="$PATH:$HOME/.local/bin"
 
@@ -49,24 +61,6 @@ export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 
 # homebrew setup
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# fzf setup
-source <(fzf --zsh)
-
-# yazi setup
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
-}
-
-# zoxide setup
-eval "$(zoxide init zsh)"
-
-# ifg setup
-eval "$(ifg --sh)"
 
 # nvm setup
 export NVM_DIR="$HOME/.nvm"
@@ -94,3 +88,27 @@ export PATH="$HOME/go/bin:$PATH"
 
 # .NET Core SDK tools setup
 export PATH="$PATH:/Users/gjtiquia/.dotnet/tools"
+
+# =======================================
+# TOOLS SETUP
+# - needs to be set after ENV SETUP cuz some tools are installed via `go install`
+
+# fzf setup
+source <(fzf --zsh)
+
+# yazi setup
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+# zoxide setup
+eval "$(zoxide init zsh)"
+
+# ifg setup
+eval "$(ifg --sh)"
+
+# =======================================
